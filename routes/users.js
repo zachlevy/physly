@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
     console.log(users)
     res.send(JSON.stringify(users));
   })
-  // res.send('respond with a resource');
 });
 
 module.exports = router;
