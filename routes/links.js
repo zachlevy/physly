@@ -13,7 +13,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
   var linkParams = {
     slug: generator.randomString(),
-    url: req.body.url
+    url: req.body.url,
+    title: req.body.title,
+    description: req.body.description
   }
   Link.create(linkParams).then(function(newLink) {
     res.send(JSON.stringify(newLink))

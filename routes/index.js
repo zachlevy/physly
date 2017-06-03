@@ -16,17 +16,19 @@ router.get('/:slug', function(req, res) {
     res.send(
       `<html>
         <head>
-        <style>
-          body {
-            margin: 0;
-          }
-          iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            margin: 0;
-          }
-        </style>
+          <title>${link.get('title')}</title>
+          <meta name="description" content="${link.get('description')}">
+          <style>
+            body {
+              margin: 0;
+            }
+            iframe {
+              width: 100%;
+              height: 100%;
+              border: 0;
+              margin: 0;
+            }
+          </style>
         </head>
         <body>
         <iframe src="${link.get('url')}"></iframe>
