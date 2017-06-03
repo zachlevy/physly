@@ -6,6 +6,33 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form id="submit-link" method="POST" action="/links/">
+      <input type="text" name="url" />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
+  <script>
+    document.getElementById("submit-link").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      console.log("on submit form");
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('POST', '/links/');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function() {
+        if (xhr.status === 201) {
+          console.log("success");
+          console.log(xhr.responseText);
+        }
+        else {
+          console.log("failure");
+          console.log(xhr.status);
+        }
+      };
+      xhr.send(JSON.stringify({
+        url: 'http://google.com?ref=test2'
+      }));
+    })
+  </script>
 </html>

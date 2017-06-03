@@ -6,7 +6,6 @@ var generator = require("../lib/generator")
 /* GET links listing. */
 router.get('/', function(req, res, next) {
   Link.findAll().then(links => {
-    console.log(links)
     res.send(JSON.stringify(links));
   })
 });
@@ -14,7 +13,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
   var linkParams = {
     slug: generator.randomString(),
-    url: req.body.destination
+    url: req.body.url
   }
   Link.create(linkParams).then(function(newLink) {
     res.send(JSON.stringify(newLink))
