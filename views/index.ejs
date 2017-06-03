@@ -6,14 +6,18 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <form id="submit-link" method="POST" action="/links/">
-      <input type="text" name="url" />
+    <form id="link-form" method="POST" action="/links/">
+      <input id="link-url" type="text" name="url" />
       <input type="submit" value="Submit" />
     </form>
   </body>
   <script>
-    document.getElementById("submit-link").addEventListener("submit", function(event) {
+    document.getElementById("link-form").addEventListener("submit", function(event) {
       event.preventDefault();
+
+      var link = {
+        url: document.getElementById("link-url").value
+      }
 
       console.log("on submit form");
       var xhr = new XMLHttpRequest();
@@ -21,7 +25,7 @@
       xhr.open('POST', '/links/');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onload = function() {
-        if (xhr.status === 201) {
+        if (xhr.status === 200) {
           console.log("success");
           console.log(xhr.responseText);
         }
@@ -31,7 +35,7 @@
         }
       };
       xhr.send(JSON.stringify({
-        url: 'http://google.com?ref=test2'
+        url: link.url
       }));
     })
   </script>
