@@ -14,26 +14,36 @@ router.get('/:slug', function(req, res) {
   Link.findOne({where: {slug: req.params.slug}}).then(function (link) {
     console.log(link);
     res.send(
-      `<html>
-        <head>
-          <title>${link.get('title')}</title>
-          <meta name="description" content="${link.get('description')}">
-          <style>
-            body {
-              margin: 0;
-            }
-            iframe {
-              width: 100%;
-              height: 100%;
-              border: 0;
-              margin: 0;
-            }
-          </style>
-        </head>
-        <body>
-        <iframe src="${link.get('url')}"></iframe>
-        </body>
-      </html>`
+      `
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>${link.get('title')}</title>
+            <meta name="description" content="${link.get('description')}">
+            <style>
+              html {
+                height: 100%;
+              }
+              body {
+                margin: 0;
+                height: 100%;
+              }
+              iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                margin: 0;
+              }
+            </style>
+          </head>
+          <body>
+            <iframe src="${link.get('url')}"></iframe>
+          </body>
+        </html>
+      `
     )
   });
 });

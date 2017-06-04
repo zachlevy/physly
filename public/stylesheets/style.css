@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+#alert {
+  background-color: orange;
+}
+#alert p {
+  color: white;
+  padding: 1em;
+  margin: 0;
+}
+#alert h2 {
+  padding: 1em;
+  margin: 0;
+  color: white;
+}

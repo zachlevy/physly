@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <div id="alert"></div>
     <form id="link-form" method="POST" action="/links/">
       <label for="link-url">Url</label>
       <input id="link-url" type="text" name="url" />
@@ -39,11 +40,13 @@
       xhr.onload = function() {
         if (xhr.status === 200) {
           // success
+          document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>"
           console.log("success");
           console.log(xhr.responseText);
         }
         else {
           // failure
+          document.getElementById("alert").innerHTML = "<p>Oops! Something went wrong.</p>"
           console.log("failure");
           console.log(xhr.status);
         }
