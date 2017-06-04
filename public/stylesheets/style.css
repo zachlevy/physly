@@ -1,19 +1,19 @@
 .brand-header {
-  padding: 1em;
+  padding: 1em 0;
 }
 .brand-name {
   margin: 0;
-  padding: 0.1em;
+  padding: 0 0.5em;
+  display: inline;
 }
 .brand-logo {
   animation: logo-spin infinite 20s linear;
   height: 50px;
-  float: left;
-  padding: 0.1em;
+  display: inline;
 }
 .hero {
   background-color: #e8bf28;
-  padding: 1em;
+  padding: 2em;
   color: white;
 }
 @keyframes logo-spin {
