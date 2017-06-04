@@ -25,22 +25,22 @@
 }
 .notification .nearby-notification-screen .screen-title {
   font-size: 1.4em;
-  color: #999999;
+  color: #717171;
   font-weight: 200;
 }
 .notification .nearby-notification {
   position: relative;
 }
 .notification .nearby-notification .title {
-  color: blue;
+  color: #254fbf;
   font-size: 1.4em;
 }
 .notification .nearby-notification .link a {
-  color: green;
+  color: #1c9e41;
   text-decoration: none;
 }
 .notification .nearby-notification .description {
-
+  color: #565656;
 }
 .notification .nearby-notification .favicon {
   position: absolute;
