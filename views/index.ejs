@@ -4,14 +4,20 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script>
+      UPLOADCARE_LOCALE = "en";
+      UPLOADCARE_TABS = "file url";
+      UPLOADCARE_PUBLIC_KEY = "0661a497f981abbf29eb";
+    </script>
+    <script charset="utf-8" src="//ucarecdn.com/libs/widget/2.10.3/uploadcare.full.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
           <div class="brand-header">
-            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.02 278.12"><title>Physly Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M170.38,135.79A25.09,25.09,0,0,0,155,124a25.4,25.4,0,0,0-6.14-.87,25.26,25.26,0,1,0,21.47,12.63Z"/><path d="M121.2,117.27a41.87,41.87,0,0,1,6.61-4.72,41.45,41.45,0,0,1,48,4.72l49.9-86.43a8.08,8.08,0,0,0-3-11,149,149,0,0,0-148.5,0,8.08,8.08,0,0,0-3,11Z"/><path d="M294.66,142.71a7.88,7.88,0,0,0-5.72-2.37H189.12a41.42,41.42,0,0,1-27.3,47.3l49.89,86.42a8.08,8.08,0,0,0,11,3A149,149,0,0,0,297,148.43,8.07,8.07,0,0,0,294.66,142.71Z"/><path d="M112.64,169.13a41.1,41.1,0,0,1-4.74-28.79H8.08A8.08,8.08,0,0,0,0,148.41,148.64,148.64,0,0,0,74.26,277a8.08,8.08,0,0,0,11-3l49.91-86.45A41.11,41.11,0,0,1,112.64,169.13Z"/></g></g></svg>
             <h1 class="brand-name">Physly</h1>
+            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.02 278.12"><title>Physly Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M170.38,135.79A25.09,25.09,0,0,0,155,124a25.4,25.4,0,0,0-6.14-.87,25.26,25.26,0,1,0,21.47,12.63Z"/><path d="M121.2,117.27a41.87,41.87,0,0,1,6.61-4.72,41.45,41.45,0,0,1,48,4.72l49.9-86.43a8.08,8.08,0,0,0-3-11,149,149,0,0,0-148.5,0,8.08,8.08,0,0,0-3,11Z"/><path d="M294.66,142.71a7.88,7.88,0,0,0-5.72-2.37H189.12a41.42,41.42,0,0,1-27.3,47.3l49.89,86.42a8.08,8.08,0,0,0,11,3A149,149,0,0,0,297,148.43,8.07,8.07,0,0,0,294.66,142.71Z"/><path d="M112.64,169.13a41.1,41.1,0,0,1-4.74-28.79H8.08A8.08,8.08,0,0,0,0,148.41,148.64,148.64,0,0,0,74.26,277a8.08,8.08,0,0,0,11-3l49.91-86.45A41.11,41.11,0,0,1,112.64,169.13Z"/></g></g></svg>
           </div>
         </div>
         <div class="col-12">
@@ -36,7 +42,11 @@
                 <input id="link-title" class="form-control" type="text" name="title" placeholder="example: Statue of Liberty" />
                 <br />
                 <label for="link-description">Description</label>
-                <textarea id="link-description" class="form-control" type="text" name="description" placeholder="Top 10 facts about the Statue of Liberty"></textarea>
+                <input id="link-description" class="form-control" type="text" name="description" placeholder="Top 10 facts about the Statue of Liberty" />
+                <br />
+                <label>Icon</label>
+                <br />
+                <input type="hidden" role="uploadcare-uploader" data-crop="55x55" data-images-only="true" />
               </div>
               <div class="col-12 col-sm-4">
                 <br />

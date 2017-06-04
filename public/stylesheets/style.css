@@ -12,6 +12,7 @@
   height: 50px;
   display: inline;
   fill: #e8bf28;
+  float: left;
 }
 .site-title {
   font-weight: 300;
@@ -89,7 +90,7 @@
 }
 .hero {
   background-color: #e8bf28;
-  padding: 2em;
+  padding: 3em;
   color: white;
 }
 @keyframes logo-spin {
