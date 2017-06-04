@@ -5,22 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <div id="alert"></div>
-    <form id="link-form" method="POST" action="/links/">
-      <h1>The Url Shortener for the Physical Web</h1>
-      <input id="link-url" type="text" name="url" placeholder="Your original URL here" />
-      <p>Shorten your URLs to ensure they work with the Physical Web's Eddystone beacons.</p>
-      <br />
-      <label for="link-title">Title</label>
-      <input id="link-title" type="text" name="title" />
-      <br />
-      <label for="link-description">Description</label>
-      <input id="link-description" type="text" name="description" />
-      <br />
-      <input type="submit" value="Submit" />
-    </form>
-    <div>
+    <div class="column">
+      <h1><%= title %></h1>
+      <div id="alert"></div>
+      <form id="link-form" method="POST" action="/links/">
+        <h1>The Url Shortener for the Physical Web</h1>
+        <input id="link-url" type="text" name="url" placeholder="Your original URL here" />
+        <p>Shorten your URLs to ensure they work with the Physical Web's Eddystone beacons.</p>
+        <br />
+        <label for="link-title">Title</label>
+        <input id="link-title" type="text" name="title" />
+        <br />
+        <label for="link-description">Description</label>
+        <input id="link-description" type="text" name="description" />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div class="column">
       <div class="ios-device iphone-6--large">
         <div id="mobilePreviewContainer" class="ios-device__screen"><iframe id="mobilePreviewFrame" frameborder="0" height="500" width="289"></iframe></div>
         <div class="ios-device__volumes"></div>

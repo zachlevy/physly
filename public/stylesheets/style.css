@@ -19,6 +19,10 @@ a {
   margin: 0;
   color: white;
 }
+.column {
+  width: 50%;
+  float: left;
+}
 
 .ios-device {
     width: 320px;
