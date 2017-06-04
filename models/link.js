@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
         Link.belongsTo(models.User, {
           onDelete: "CASCADE",
           foreignKey: {
+            name: "UserId",
             allowNull: true
           }
         });
