@@ -19,6 +19,10 @@ router.post('/', function(req, res) {
   }
   Link.create(linkParams).then(function(newLink) {
     res.send(JSON.stringify(newLink))
+  }).catch(function(err) {
+    console.log("catch link creation");
+    console.log(err)
+    res.status(422).send()
   })
 })
 

@@ -9,9 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       slug: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       url: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

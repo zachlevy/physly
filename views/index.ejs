@@ -21,15 +21,22 @@
     </form>
   </body>
   <script>
+    // clear form
+    function clearForm () {
+      document.getElementById("link-url").value = ""
+      document.getElementById("link-title").value = ""
+      document.getElementById("link-description").value = ""
+    }
+
     // on form submit
     document.getElementById("link-form").addEventListener("submit", function(event) {
       event.preventDefault();
 
       console.log("on submit form");
       var link = {
-        url: document.getElementById("link-url").value,
-        title: document.getElementById("link-title").value,
-        description: document.getElementById("link-description").value,
+        url: document.getElementById("link-url").value || null,
+        title: document.getElementById("link-title").value || null,
+        description: document.getElementById("link-description").value || null,
       }
 
       // ajax
@@ -40,9 +47,10 @@
       xhr.onload = function() {
         if (xhr.status === 200) {
           // success
-          document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>"
           console.log("success");
           console.log(xhr.responseText);
+          document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>"
+          clearForm()
         }
         else {
           // failure
