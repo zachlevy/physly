@@ -16,8 +16,14 @@
   font-weight: 300;
 }
 .notification {
-  background-color: #e8bf28;
+  background-color: #cccccc;
   padding: 1em;
+}
+.notification-title {
+  color: white;
+  margin: 0.5em 0;
+  font-weight: lighter;
+  font-size: 1em;
 }
 .notification .nearby-notification-screen {
   background-color: white;
@@ -47,7 +53,34 @@
   top: 0;
   right: 0;
 }
-.notification .nearby-notification
+.notification .android-notification-screen {
+  background-color: white;
+  padding: 0.5em;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.notification .android-notification {
+  position: relative;
+}
+.notification .android-notification .title {
+  font-size: 1.2em;
+  color: #1b1b1b;
+  margin-left: 65px;
+}
+.notification .android-notification .time {
+  color: #808080;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.notification .android-notification .description {
+  color: #696969;
+  margin-left: 65px;
+}
+.notification .android-notification .favicon {
+  float: left;
+}
 .preview-title {
   font-weight: lighter;
   text-align: center;
