@@ -19,3 +19,118 @@ a {
   margin: 0;
   color: white;
 }
+
+.ios-device {
+    width: 320px;
+    height: 650.66667px;
+    border: 2px solid #999;
+    border-radius: 42.66666px;
+    position: relative;
+    margin: 5px auto;
+    background-color: white;
+}
+
+.ios-device__screen {
+    width: 90%;
+    height: 76%;
+    border: 1px solid #999;
+    margin: 0 auto;
+    margin-top: 25%;
+}
+
+.ios-device__screen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ios-device:after {
+    content: " ";
+    border-radius: 100%;
+    border: 1px solid #999;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    height: 7.5%;
+    width: 15.3%;
+    margin-left: -7.515%;
+    top: 90.1%;
+}
+
+.ios-device:before {
+    content: " ";
+    display: inline-block;
+    height: 1.2%;
+    width: 17%;
+    margin-left: -8.5%;
+    border-radius: 7.46667px;
+    border: 1px solid #999;
+    position: absolute;
+    left: 50%;
+    top: 5.3%;
+}
+
+.ios-device__volumes:before, .ios-device__volumes:after {
+    content: " ";
+    display: inline-block;
+    border-radius: 4.8px 0 0 4.8px;
+    background: #999;
+    position: absolute;
+    right: 100%;
+    width: 1.6%;
+    height: 7.6%;
+    top: 21%;
+}
+
+.ios-device__volumes:after {
+    top: 30%;
+}
+
+.ios-device__button:before {
+    content: " ";
+    display: inline-block;
+    width: 4.8px;
+    height: 26.66667px;
+    border-radius: 4.8px 0 0 4.8px;
+    background: #999;
+    position: absolute;
+    top: 83.2px;
+    right: 100%;
+}
+
+.ios-device__button:after {
+    content: " ";
+    display: inline-block;
+    width: 4.8px;
+    height: 49.06667px;
+    border-radius: 0 4.8px 4.8px 0;
+    background: #999;
+    position: absolute;
+    top: 137.6px;
+    left: 100%;
+}
+
+.ios-device__camera:after {
+    content: " ";
+    display: inline-block;
+    width: 8.53333px;
+    height: 8.53333px;
+    border-radius: 100%;
+    border: 1px solid #999;
+    margin-left: -4.26667px;
+    position: absolute;
+    top: 14.93333px;
+    left: 50%;
+}
+
+.ios-device__camera:before {
+    content: " ";
+    display: inline-block;
+    width: 11.73333px;
+    height: 11.73333px;
+    border-radius: 100%;
+    border: 1px solid #999;
+    position: absolute;
+    top: 30.93333px;
+    left: 103.46667px;
+}
