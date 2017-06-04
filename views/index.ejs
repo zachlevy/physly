@@ -2,32 +2,51 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div class="column">
-      <h1><%= title %></h1>
-      <div id="alert"></div>
-      <form id="link-form" method="POST" action="/links/">
-        <h1>The Url Shortener for the Physical Web</h1>
-        <input id="link-url" type="text" name="url" placeholder="Your original URL here" />
-        <p>Shorten your URLs to ensure they work with the Physical Web's Eddystone beacons.</p>
-        <br />
-        <label for="link-title">Title</label>
-        <input id="link-title" type="text" name="title" />
-        <br />
-        <label for="link-description">Description</label>
-        <input id="link-description" type="text" name="description" />
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
-    <div class="column">
-      <div class="ios-device iphone-6--large">
-        <div id="mobilePreviewContainer" class="ios-device__screen"><iframe id="mobilePreviewFrame" frameborder="0" height="500" width="289"></iframe></div>
-        <div class="ios-device__volumes"></div>
-        <div class="ios-device__button"></div>
-        <div class="ios-device__camera"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="brand-header">
+            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.02 278.12"><title>Physly Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M170.38,135.79A25.09,25.09,0,0,0,155,124a25.4,25.4,0,0,0-6.14-.87,25.26,25.26,0,1,0,21.47,12.63Z"/><path d="M121.2,117.27a41.87,41.87,0,0,1,6.61-4.72,41.45,41.45,0,0,1,48,4.72l49.9-86.43a8.08,8.08,0,0,0-3-11,149,149,0,0,0-148.5,0,8.08,8.08,0,0,0-3,11Z"/><path d="M294.66,142.71a7.88,7.88,0,0,0-5.72-2.37H189.12a41.42,41.42,0,0,1-27.3,47.3l49.89,86.42a8.08,8.08,0,0,0,11,3A149,149,0,0,0,297,148.43,8.07,8.07,0,0,0,294.66,142.71Z"/><path d="M112.64,169.13a41.1,41.1,0,0,1-4.74-28.79H8.08A8.08,8.08,0,0,0,0,148.41,148.64,148.64,0,0,0,74.26,277a8.08,8.08,0,0,0,11-3l49.91-86.45A41.11,41.11,0,0,1,112.64,169.13Z"/></g></g></svg>
+            <h1 class="brand-name">Physly</h1>
+          </div>
+        </div>
+        <div class="col-12 col-sm-8">
+          <form id="link-form" method="POST" action="/links/">
+            <div class="hero row">
+              <div class="col-12">
+                <h2>The Url Shortener for the Physical Web</h2>
+              </div>
+              <div class="col-12 col-sm-10">
+                <input id="link-url" class="form-control" type="text" name="url" placeholder="Your original URL here" />
+                <p>Shorten your URLs to ensure they work with the Physical Web's Eddystone beacons.</p>
+              </div>
+              <div class="col-12 col-sm-2">
+                <input class="btn btn-default" type="submit" value="Submit" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label for="link-title">Title</label>
+                <input id="link-title" class="form-control" type="text" name="title" />
+                <label for="link-description">Description</label>
+                <input id="link-description" class="form-control" type="text" name="description" />
+              </div>
+            </div>
+          </form>
+          <div id="alert"></div>
+        </div>
+        <div class="col-12 col-sm-4">
+          <div class="ios-device iphone-6--large">
+            <div id="mobilePreviewContainer" class="ios-device__screen"><iframe id="mobilePreviewFrame" frameborder="0" height="500" width="289"></iframe></div>
+            <div class="ios-device__volumes"></div>
+            <div class="ios-device__button"></div>
+            <div class="ios-device__camera"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

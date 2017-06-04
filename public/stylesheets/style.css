@@ -1,10 +1,24 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.brand-header {
+  padding: 1em;
 }
-
-a {
-  color: #00B7FF;
+.brand-name {
+  margin: 0;
+  padding: 0.1em;
+}
+.brand-logo {
+  animation: logo-spin infinite 20s linear;
+  height: 50px;
+  float: left;
+  padding: 0.1em;
+}
+.hero {
+  background-color: #e8bf28;
+  padding: 1em;
+  color: white;
+}
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 #alert {
   background-color: orange;
@@ -19,6 +33,13 @@ a {
   margin: 0;
   color: white;
 }
+.brand-primary-color {
+  color: #e8bf28;
+}
+.brand-primary-bg {
+  background-color: #e8bf28;
+}
+
 .column {
   width: 50%;
   float: left;
