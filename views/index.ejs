@@ -46,7 +46,7 @@
                 <br />
                 <label>Icon</label>
                 <br />
-                <input type="hidden" role="uploadcare-uploader" data-crop="55x55" data-images-only="true" />
+                <input id="link-favicon" type="hidden" role="uploadcare-uploader" data-crop="1:1" data-images-only="true" />
               </div>
               <div class="col-12 col-sm-4">
                 <br />
@@ -57,7 +57,7 @@
                     <div class="notification-title">Android</div>
                     <div class="android-notification-screen">
                       <div class="android-notification">
-                        <img class="favicon" src="http://placehold.it/55x55" />
+                        <img class="favicon" src="http://placehold.it/55x55" data-size="55" />
                         <div class="title">Wikipedia</div>
                         <div class="description">The world encyclopedia</div>
                         <div class="time">10:27</div>
@@ -76,7 +76,7 @@
                         <div class="title">Wikipedia</div>
                         <div class="link"><a href="#">https://phys.ly/123456</a></div>
                         <div class="description">The world encyclopedia</div>
-                        <img class="favicon" src="http://placehold.it/30x30" />
+                        <img class="favicon" src="http://placehold.it/30x30" data-size="30" />
                       </div>
                     </div>
                   </div>
@@ -101,6 +101,18 @@
     </div>
 
     <script>
+      // When image changes, update live preview.
+      var widget = uploadcare.Widget('[role=uploadcare-uploader]');
+      widget.onChange(function(file) {
+        if (file) {
+          file.done(function(fileInfo) {
+            console.log(document.getElementById("link-favicon").value)
+            updateNotificationFavicons()
+          });
+        } else {
+
+        }
+      });
 
       function validateURL(url) {
         var urlregex = /^(https?):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
@@ -125,6 +137,15 @@
 
       function setIframe(url) {
         document.getElementById("mobilePreviewFrame").setAttribute("src", url);
+      }
+
+      var updateNotificationFavicons = function () {
+        var uploadcareUrl = document.getElementById("link-favicon").value
+        var size;
+        Array.prototype.forEach.call(document.getElementsByClassName("favicon"), function(icon) {
+          size = icon.getAttribute("data-size")
+          icon.setAttribute("src", uploadcareUrl + "-/resize/" + size + "x" + size + "/" || "http://placehold.it/55x55");
+        });
       }
 
       var updateNotificationTitles = function(event) {
@@ -162,6 +183,7 @@
           url: document.getElementById("link-url").value || null,
           title: document.getElementById("link-title").value || null,
           description: document.getElementById("link-description").value || null,
+          icon: document.getElementById("link-favicon").value || null
         };
 
         // ajax
