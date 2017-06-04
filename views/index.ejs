@@ -102,6 +102,23 @@
       document.getElementById("mobilePreviewFrame").setAttribute("src", url);
     }
 
+    var updateNotificationTitles = function(event) {
+      console.log("updateNotifications")
+      // console.log(event.target.value)
+      Array.prototype.forEach.call(document.getElementsByClassName("title"), function(title) {
+        title.innerHTML = event.target.value || "Wikipedia";
+      });
+    }
+
+    var updateNotificationDescriptions = function(event) {
+      Array.prototype.forEach.call(document.getElementsByClassName("description"), function(description) {
+        description.innerHTML = event.target.value || "The world encyclopedia";
+      });
+    }
+
+    document.getElementById("link-title").addEventListener("keyup", updateNotificationTitles);
+    document.getElementById("link-description").addEventListener("keyup", updateNotificationDescriptions);
+
     // on form submit
     document.getElementById("link-form").addEventListener("submit", function(event) {
       event.preventDefault();
