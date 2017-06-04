@@ -14,47 +14,61 @@
             <h1 class="brand-name">Physly</h1>
           </div>
         </div>
-        <div class="col-12 col-sm-8">
+        <div class="col-12">
           <form id="link-form" method="POST" action="/links/">
             <div class="hero row">
               <div class="col-12">
-                <h2>The Url Shortener for the Physical Web</h2>
+                <h2 class="site-title">Url Shortener for the Physical Web</h2>
               </div>
               <div class="col-12 col-sm-10">
                 <input id="link-url" class="form-control" type="text" name="url" placeholder="Your original URL here" />
-                <p>Shorten your URLs to ensure they work with the Physical Web's Eddystone beacons.</p>
+                <p>Shorten your URLs to ensure they work with Eddystone beacons.</p>
               </div>
               <div class="col-12 col-sm-2">
                 <input class="btn btn-secondary" type="submit" value="Submit" />
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 col-sm-4">
                 <br />
-                <h2>Notification Preview</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 col-sm-6">
+                <h2 class="preview-title">Notification Text</h2>
                 <label for="link-title">Title</label>
-                <input id="link-title" class="form-control" type="text" name="title" />
+                <input id="link-title" class="form-control" type="text" name="title" placeholder="example: Statue of Liberty" />
+                <br />
                 <label for="link-description">Description</label>
-                <input id="link-description" class="form-control" type="text" name="description" />
+                <textarea id="link-description" class="form-control" type="text" name="description" placeholder="Top 10 facts about the Statue of Liberty"></textarea>
               </div>
-              <div class="col-12 col-sm-6">
-
+              <div class="col-12 col-sm-4">
+                <br />
+                <h2 class="preview-title">Notification Preview</h2>
+                <div class="row notification">
+                  <div class="col-12">
+                    <div class="nearby-notification-screen">
+                      <div class="screen-title">Nearby Beacons</div>
+                      <br />
+                      <div class="nearby-notification">
+                        <div class="title">Wikipedia</div>
+                        <div class="link"><a href="#">https://phys.ly/123456</a></div>
+                        <div class="description">The world encyclopedia</div>
+                        <img class="favicon" src="http://placehold.it/30x30" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-4">
+                <br />
+                <h2 class="preview-title">Web Preview</h2>
+                <div class="ios-device iphone-6--large">
+                  <div id="mobilePreviewContainer" class="ios-device__screen"><iframe id="mobilePreviewFrame" frameborder="0" height="500" width="289"></iframe></div>
+                  <div class="ios-device__volumes"></div>
+                  <div class="ios-device__button"></div>
+                  <div class="ios-device__camera"></div>
+                </div>
               </div>
             </div>
           </form>
           <div id="alert"></div>
-        </div>
-        <div class="col-12 col-sm-4">
-          <div class="ios-device iphone-6--large">
-            <div id="mobilePreviewContainer" class="ios-device__screen"><iframe id="mobilePreviewFrame" frameborder="0" height="500" width="289"></iframe></div>
-            <div class="ios-device__volumes"></div>
-            <div class="ios-device__button"></div>
-            <div class="ios-device__camera"></div>
-          </div>
         </div>
       </div>
     </div>
