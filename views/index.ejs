@@ -91,11 +91,26 @@
     </div>
   </body>
   <script>
+
+    function validateURL(url) {
+      var urlregex = /^(https?):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
+       return urlregex.test(url);
+    }
+
+    function validateHttps(url) {
+      if (url.slice(0,5) === "https") {
+        return true;
+      } else if (url.slice(0,4) === "http") {
+        return false;
+      } else {
+        return null;
+      }
+    }
     // clear form
     function clearForm () {
-      document.getElementById("link-url").value = ""
-      document.getElementById("link-title").value = ""
-      document.getElementById("link-description").value = ""
+      document.getElementById("link-url").value = "";
+      document.getElementById("link-title").value = "";
+      document.getElementById("link-description").value = "";
     }
 
     function setIframe(url) {
@@ -103,7 +118,7 @@
     }
 
     var updateNotificationTitles = function(event) {
-      console.log("updateNotifications")
+      console.log("updateNotifications");
       // console.log(event.target.value)
       Array.prototype.forEach.call(document.getElementsByClassName("title"), function(title) {
         title.innerHTML = event.target.value || "Wikipedia";
@@ -116,6 +131,15 @@
       });
     }
 
+    var updateIframeUrl = function(event) {
+      console.log("updateIframeUrl");
+      var url = event.target.value;
+      if (validateURL(url)) {
+        setIframe(url);
+      }
+    }
+
+    document.getElementById("link-url").addEventListener("keyup", updateIframeUrl);
     document.getElementById("link-title").addEventListener("keyup", updateNotificationTitles);
     document.getElementById("link-description").addEventListener("keyup", updateNotificationDescriptions);
 
@@ -128,7 +152,7 @@
         url: document.getElementById("link-url").value || null,
         title: document.getElementById("link-title").value || null,
         description: document.getElementById("link-description").value || null,
-      }
+      };
 
       // ajax
       var xhr = new XMLHttpRequest();
@@ -140,9 +164,9 @@
           // success
           console.log("success");
           console.log(xhr.responseText);
-          document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>"
-          setIframe(JSON.parse(xhr.responseText).url)
-          clearForm()
+          document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
+          setIframe(JSON.parse(xhr.responseText).url);
+          clearForm();
         }
         else {
           // failure

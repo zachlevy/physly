@@ -11,6 +11,7 @@
   animation: logo-spin infinite 20s linear;
   height: 50px;
   display: inline;
+  fill: #e8bf28;
 }
 .site-title {
   font-weight: 300;
