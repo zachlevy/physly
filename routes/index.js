@@ -21,8 +21,10 @@ router.get('/:slug', function(req, res) {
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
+
           <title>${link.get('title')}</title>
           <meta name="description" content="${link.get('description')}">
+          <link rel="icon" href="${link.get('favicon')}">
           <style>
             html {
               height: 100%;
