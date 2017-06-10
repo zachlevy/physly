@@ -14,11 +14,6 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "physlydb",
-    "password": "Hq7KqEIXR64Dg",
-    "database": "aa15mcbq6cqo6wn",
-    "host": "aa15mcbq6cqo6wn.c7ltxpgt3ahs.ap-southeast-2.rds.amazonaws.com",
-    "dialect": "postgres",
-    "port": 5432
+    "use_env_variable": "DATABASE_URL"
   }
 }
