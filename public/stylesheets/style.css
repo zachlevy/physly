@@ -14,6 +14,13 @@
   fill: #e8bf28;
   float: left;
 }
+.short-url-wrapper {
+  padding: 1em;
+  background-color: #1b1b1b;
+}
+.short-url-wrapper #short-url {
+  color: white;
+}
 .site-title {
   font-weight: 300;
 }

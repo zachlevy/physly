@@ -35,6 +35,13 @@
               </div>
             </div>
             <div class="row">
+              <div class="col-12">
+                <div class="short-url-wrapper">
+                  <h1 id="short-url" class="text-center"></h1>
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-12 col-sm-4">
                 <br />
                 <h2 class="preview-title">Notification Text</h2>
@@ -198,6 +205,7 @@
             console.log(xhr.responseText);
             document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
             setIframe(JSON.parse(xhr.responseText).url);
+            document.getElementById("short-url").innerHTML = window.location.href + JSON.parse(xhr.responseText).slug
             clearForm();
           }
           else {
