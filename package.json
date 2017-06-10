@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "local": "nodemon ./bin/www",
-    "seed": "node seeders"
+    "seed": "node seeders",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
