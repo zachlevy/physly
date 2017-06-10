@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "local": "node ./bin/www",
+    "local": "nodemon ./bin/www",
     "seed": "node seeders"
   },
   "dependencies": {
