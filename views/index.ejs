@@ -64,7 +64,7 @@
                     <div class="notification-title">Android</div>
                     <div class="android-notification-screen">
                       <div class="android-notification">
-                        <img class="favicon" src="http://placehold.it/55x55" data-size="55" />
+                        <img class="favicon" src="https://placehold.it/55x55" data-size="55" />
                         <div class="title">Wikipedia</div>
                         <div class="description">The world encyclopedia</div>
                         <div class="time">10:27</div>
@@ -83,7 +83,7 @@
                         <div class="title">Wikipedia</div>
                         <div class="link"><a href="#">https://phys.ly/123456</a></div>
                         <div class="description">The world encyclopedia</div>
-                        <img class="favicon" src="http://placehold.it/30x30" data-size="30" />
+                        <img class="favicon" src="https://placehold.it/30x30" data-size="30" />
                       </div>
                     </div>
                   </div>
@@ -151,7 +151,7 @@
         var size;
         Array.prototype.forEach.call(document.getElementsByClassName("favicon"), function(icon) {
           size = icon.getAttribute("data-size")
-          icon.setAttribute("src", uploadcareUrl + "-/resize/" + size + "x" + size + "/" || "http://placehold.it/55x55");
+          icon.setAttribute("src", uploadcareUrl + "-/resize/" + size + "x" + size + "/" || "https://placehold.it/55x55");
         });
       }
 
@@ -203,7 +203,7 @@
             // success
             console.log("success");
             console.log(xhr.responseText);
-            document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>http://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
+            document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>https://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
             setIframe(JSON.parse(xhr.responseText).url);
             document.getElementById("short-url").innerHTML = window.location.href + JSON.parse(xhr.responseText).slug
             clearForm();
