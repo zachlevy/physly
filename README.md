@@ -11,11 +11,6 @@ Start Server in Production
 
 `$ npm start`
 
-
-### Database
-
-`$ npm run seed`
-
 ### Database
 Uses postgres. Must migrate before running `$ npm start`.
 
@@ -24,6 +19,7 @@ Uses postgres. Must migrate before running `$ npm start`.
 * `$ sudo npm install -g sequelize-cli`
 * `$ sudo npm install -g pg`
 * `$ NODE_ENV=production sequelize db:migrate`
+* `$ npm run seed` (Optional)
 
 ### Deployment
 #### Run Server
@@ -31,6 +27,6 @@ Uses postgres. Must migrate before running `$ npm start`.
 
 #### SSL and Postgres for Digital Ocean
 
-(Video Tutorial)[https://www.youtube.com/watch?v=kR06NoSzAXY]
-(Blog Tutorial)[https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/#install-nginx]
-(Digital Ocean Database Setup)[https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04]
+[Video Tutorial](https://www.youtube.com/watch?v=kR06NoSzAXY)
+[Blog Tutorial](https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/#install-nginx)
+[Digital Ocean Database Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
