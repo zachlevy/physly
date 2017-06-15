@@ -24,9 +24,3 @@ Uses postgres. Must migrate before running `$ npm start`.
 ### Deployment
 #### Run Server
 `$ pm2 start npm -- start`
-
-#### SSL and Postgres for Digital Ocean
-
-[Video Tutorial](https://www.youtube.com/watch?v=kR06NoSzAXY)
-[Blog Tutorial](https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/#install-nginx)
-[Digital Ocean Database Setup](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
