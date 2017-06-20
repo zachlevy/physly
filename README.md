@@ -24,3 +24,7 @@ Uses postgres. Must migrate before running `$ npm start`.
 ### Deployment
 #### Run Server
 `$ pm2 start npm -- start`
+
+#### Update Server
+`$ git pull origin master`
+`$ pm2 restart npm`
