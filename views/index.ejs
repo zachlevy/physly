@@ -177,7 +177,7 @@
         console.log("updateIframeUrl");
         if (event.target.value.match(/^http:\/\//)) {
           console.log("http url")
-          document.getElementById("error-text").innerHTML = "Please <a class=\"btn btn-outline-secondary btn-sm\" href=\"\">Subscribe</a> to shorten insecure urls (http). <a class=\"btn btn-link btn-link-inline\" href=\"\">Find out why</a>"
+          document.getElementById("error-text").innerHTML = "Please <a class=\"btn btn-outline-secondary btn-sm\" href=\"/pages/subscribe\">Subscribe</a> to shorten insecure urls (http). <a class=\"btn btn-link btn-link-inline\" href=\"/pages/subscribe\">Find out why</a>"
           document.getElementById("error-wrapper").className = document.getElementById("error-wrapper").className.replace(" hidden", "")
         } else {
           if (!document.getElementById("error-wrapper").className.match(/ hidden/)) {
