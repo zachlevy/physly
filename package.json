@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "local": "nodemon ./bin/www",
+    "start": "API_URL=https://zachlevy-api-production.herokuapp.com node ./bin/www",
+    "local": "API_URL=http://localhost:3001 nodemon ./bin/www",
     "seed": "node seeders",
     "deploy": "git push heroku master"
   },

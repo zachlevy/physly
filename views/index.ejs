@@ -13,13 +13,8 @@
   </head>
   <body>
     <div class="container-fluid">
+      <%- include _navbar.ejs %>
       <div class="row">
-        <div class="col-12">
-          <div class="brand-header">
-            <h1 class="brand-name">Physly</h1>
-            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.02 278.12"><title>Physly Logo</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M170.38,135.79A25.09,25.09,0,0,0,155,124a25.4,25.4,0,0,0-6.14-.87,25.26,25.26,0,1,0,21.47,12.63Z"/><path d="M121.2,117.27a41.87,41.87,0,0,1,6.61-4.72,41.45,41.45,0,0,1,48,4.72l49.9-86.43a8.08,8.08,0,0,0-3-11,149,149,0,0,0-148.5,0,8.08,8.08,0,0,0-3,11Z"/><path d="M294.66,142.71a7.88,7.88,0,0,0-5.72-2.37H189.12a41.42,41.42,0,0,1-27.3,47.3l49.89,86.42a8.08,8.08,0,0,0,11,3A149,149,0,0,0,297,148.43,8.07,8.07,0,0,0,294.66,142.71Z"/><path d="M112.64,169.13a41.1,41.1,0,0,1-4.74-28.79H8.08A8.08,8.08,0,0,0,0,148.41,148.64,148.64,0,0,0,74.26,277a8.08,8.08,0,0,0,11-3l49.91-86.45A41.11,41.11,0,0,1,112.64,169.13Z"/></g></g></svg>
-          </div>
-        </div>
         <div class="col-12">
           <form id="link-form" method="POST" action="/links/">
             <div class="hero row">
@@ -27,7 +22,7 @@
                 <h2 class="site-title">Url Shortener for the Physical Web</h2>
               </div>
               <div class="col-12 col-sm-10">
-                <input id="link-url" class="form-control" type="text" name="url" placeholder="Your original URL here" />
+                <input id="link-url" class="form-control" type="text" name="url" placeholder="Your original URL here. example: https://example.com" />
                 <p>Shorten your URLs to ensure they work with Eddystone beacons.</p>
               </div>
               <div class="col-12 col-sm-2">
@@ -36,7 +31,14 @@
             </div>
             <div class="row">
               <div class="col-12">
-                <div class="short-url-wrapper">
+                <div id="error-wrapper" class=" hidden">
+                  <p id="error-text" class="text-center"></p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div id="short-url-wrapper" class="hidden">
                   <h1 id="short-url" class="text-center"></h1>
                 </div>
               </div>
@@ -49,7 +51,7 @@
                 <input id="link-title" class="form-control" type="text" name="title" placeholder="example: Wikipedia" />
                 <br />
                 <label for="link-description">Description</label>
-                <input id="link-description" class="form-control" type="text" name="description" placeholder="The world encyclopedia" />
+                <input id="link-description" class="form-control" type="text" name="description" placeholder="example: The world encyclopedia" />
                 <br />
                 <label>Icon</label>
                 <br />
@@ -173,6 +175,15 @@
 
       var updateIframeUrl = function(event) {
         console.log("updateIframeUrl");
+        if (event.target.value.match(/^http:\/\//)) {
+          console.log("http url")
+          document.getElementById("error-text").innerHTML = "Please <a class=\"btn btn-outline-secondary btn-sm\" href=\"\">Subscribe</a> to shorten insecure urls (http). <a class=\"btn btn-link btn-link-inline\" href=\"\">Find out why</a>"
+          document.getElementById("error-wrapper").className = document.getElementById("error-wrapper").className.replace(" hidden", "")
+        } else {
+          if (!document.getElementById("error-wrapper").className.match(/ hidden/)) {
+            document.getElementById("error-wrapper").className += " hidden"
+          }
+        }
         var url = event.target.value;
         if (validateURL(url)) {
           setIframe(url);
@@ -207,6 +218,7 @@
             console.log(xhr.responseText);
             document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>https://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
             setIframe(JSON.parse(xhr.responseText).url);
+            document.getElementById("short-url-wrapper").className = ""
             document.getElementById("short-url").innerHTML = window.location.href + JSON.parse(xhr.responseText).slug
             clearForm();
           }

@@ -7,6 +7,12 @@ var Link = models.Link;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Phys.ly' });
+  return
+});
+
+router.get('/pages/subscribe', function(req, res, next) {
+  res.render('subscribe', { title: 'Phys.ly Subscribe', apiUrl: process.env.API_URL });
+  return
 });
 
 router.get('/:slug', function(req, res) {
