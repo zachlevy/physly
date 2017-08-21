@@ -42,7 +42,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div id="error-wrapper" class="">
+          <div id="error-wrapper" class="hidden">
             <ul id="error-list" class="list-unstyled">
             </ul>
           </div>
@@ -87,6 +87,7 @@
         xhr.open('POST', '<%= apiUrl %>/subscriptions');
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function() {
+          document.getElementById("error-wrapper").className = document.getElementById("error-wrapper").className.replace("hidden", "");
           if (xhr.status === 201) {
             // success
             console.log("success");
