@@ -106,7 +106,6 @@
               </div>
             </div>
           </form>
-          <div id="alert"></div>
         </div>
       </div>
     </div>
@@ -216,7 +215,6 @@
             // success
             console.log("success");
             console.log(xhr.responseText);
-            document.getElementById("alert").innerHTML = "<p>Success! Here's your shortened link.</p><h2>https://phys.ly/" + JSON.parse(xhr.responseText).slug + "</h2>";
             setIframe(JSON.parse(xhr.responseText).url);
             document.getElementById("short-url-wrapper").className = ""
             document.getElementById("short-url").innerHTML = window.location.href + JSON.parse(xhr.responseText).slug
@@ -224,7 +222,7 @@
           }
           else {
             // failure
-            document.getElementById("alert").innerHTML = "<p>Oops! Something went wrong.</p>"
+            document.getElementById("error-text").innerHTML = "<p>Oops! Something went wrong.</p>"
             console.log("failure");
             console.log(xhr.status);
           }
