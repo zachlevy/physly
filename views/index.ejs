@@ -63,6 +63,38 @@
 
                 <div class="row notification">
                   <div class="col-12">
+                    <div class="notification-title">iOS</div>
+                    <div class="ios-notification-screen">
+                      <div class="chrome-header">
+                        <img class="chrome-icon" src="/images/ios_chrome_icon.png" data-size="17" />
+                        <span class="chrome-brand">CHROME</span>
+                        <span class="float-sm-right chrome-show-less">Show Less</span>
+                      </div>
+                      <div class="chrome-body">
+                        <div class="row chrome-buttons text-center">
+                          <div class="col-6">
+                            <div class="chrome-button"><img src="/images/ios_plus.png" /> New Tab</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="chrome-button"><img src="/images/ios_mic.png" /> Voice Search</div>
+                          </div>
+                        </div>
+                        <div class="chrome-notification">
+                          <img class="favicon" src="/images/ios_physical_web.png" data-size="40" />
+                          <div class="title">Wikipedia</div>
+                          <div class="url">https://phys.ly/ex1234</div>
+                        </div>
+                        <div class="chrome-footer">
+                          Scanning for <span class="chrome-physical-web">Physical Web</span> objects... <span class="chrome-search-disable">Disable</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row notification">
+                  <div class="col-12">
                     <div class="notification-title">Android</div>
                     <div class="android-notification-screen">
                       <div class="android-notification">
@@ -174,15 +206,15 @@
 
       var updateIframeUrl = function(event) {
         console.log("updateIframeUrl");
-        if (event.target.value.match(/^http:\/\//)) {
-          console.log("http url")
-          document.getElementById("error-text").innerHTML = "Please <a class=\"btn btn-outline-secondary btn-sm\" href=\"/pages/subscribe\">Subscribe</a> to shorten insecure urls (http). <a class=\"btn btn-link btn-link-inline\" href=\"/pages/subscribe\">Find out why</a>"
-          document.getElementById("error-wrapper").className = document.getElementById("error-wrapper").className.replace(" hidden", "")
-        } else {
-          if (!document.getElementById("error-wrapper").className.match(/ hidden/)) {
-            document.getElementById("error-wrapper").className += " hidden"
-          }
-        }
+        // if (event.target.value.match(/^http:\/\//)) {
+        //   console.log("http url")
+        //   document.getElementById("error-text").innerHTML = "Please <a class=\"btn btn-outline-secondary btn-sm\" href=\"/pages/subscribe\">Subscribe</a> to shorten insecure urls (http). <a class=\"btn btn-link btn-link-inline\" href=\"/pages/subscribe\">Find out why</a>"
+        //   document.getElementById("error-wrapper").className = document.getElementById("error-wrapper").className.replace(" hidden", "")
+        // } else {
+        //   if (!document.getElementById("error-wrapper").className.match(/ hidden/)) {
+        //     document.getElementById("error-wrapper").className += " hidden"
+        //   }
+        // }
         var url = event.target.value;
         if (validateURL(url)) {
           setIframe(url);

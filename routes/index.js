@@ -31,24 +31,8 @@ router.get('/:slug', function(req, res) {
           <title>${link.get('title')}</title>
           <meta name="description" content="${link.get('description')}">
           <link rel="icon" href="${link.get('favicon')}">
-          <style>
-            html {
-              height: 100%;
-            }
-            body {
-              margin: 0;
-              height: 100%;
-            }
-            iframe {
-              width: 100%;
-              height: 100%;
-              border: 0;
-              margin: 0;
-            }
-          </style>
         </head>
         <body>
-          <iframe src="${link.get('url')}"></iframe>
           <script>
             window.location.replace("${link.get('url')}");
           </script>

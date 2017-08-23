@@ -320,3 +320,73 @@
 .btn-link:hover {
   color: #eee;
 }
+.ios-notification-screen {
+  border-radius: 10px;
+  background-color: #dddddd;
+  overflow: hidden;
+}
+.chrome-body {
+  padding: 0.5em;
+}
+.chrome-header {
+  background-color: #efefef;
+  font-weight: 300;
+  font-size: 0.7rem;
+  padding: 0.4em 0;
+}
+.chrome-brand {
+  vertical-align: middle;
+}
+.chrome-icon {
+  margin: 0.5em 0.7em;
+  border-radius: 3px;
+  max-height: 22px;
+}
+.chrome-show-less {
+  margin-right: 0.5em;
+  margin-top: 0.8em;
+}
+.chrome-buttons {
+  padding: 0 0.5em 0.5em;
+}
+.chrome-button {
+  padding: 0.5em;
+  background-color: #efefef;
+  border-radius: 4px;
+}
+.chrome-button img {
+  max-height: 1.3em;
+}
+.chrome-notification {
+  overflow: hidden;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.chrome-notification .favicon {
+  float: left;
+  padding: 0.5em;
+  max-height: 46px;
+}
+.chrome-notification .title {
+  color: #666;
+  margin-top: 0.4em;
+}
+.chrome-notification .url {
+  color: #888;
+}
+.chrome-footer {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 300;
+}
+.chrome-physical-web {
+  text-decoration: underline;
+}
+.chrome-search-disable {
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 0.1em 0.4em;
+}
