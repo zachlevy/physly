@@ -49,6 +49,9 @@ router.get('/:slug', function(req, res) {
         </head>
         <body>
           <iframe src="${link.get('url')}"></iframe>
+          <script>
+            window.location.replace("${link.get('url')}");
+          </script>
         </body>
       </html>`
     )
