@@ -28,3 +28,11 @@ Uses postgres. Must migrate before running `$ npm start`.
 #### Update Server
 `$ git pull origin master`
 `$ pm2 restart npm`
+
+#### HTTPS with letsencrypt
+Renewing must be done manually. Make sure to redirect http to https in the prompt.
+
+```
+$ cd /opt/letsencrypt/
+$ ./letsencrypt-auto --renew-by-default
+```
