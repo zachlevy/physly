@@ -390,3 +390,10 @@
   border-radius: 2px;
   padding: 0.1em 0.4em;
 }
+.paypal-button-wrapper {
+  margin-top: 1.5em;
+  width: 100px;
+}
+.paypal-button {
+  width: 100px;
+}
