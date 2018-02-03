@@ -1,6 +1,9 @@
 ## phys.ly
 
-Physly is a url shortener specifically designed for the physical web. This is useful for the hardware limitations of the Bluetooth Eddystone protocol used in beacons for the Physical Web.
+Physly is a url shortener specifically designed for the physical web.
+
+### http Without SSL on Physical Web
+Physly will let you use http URLs with Physical Web beacons. Shorten your `http://` URL with Physly and we will give you an `https://` URL to use with your Eddystone beacons.
 
 ### Development
 Start Server in Development
