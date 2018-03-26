@@ -259,7 +259,8 @@
             console.log(xhr.responseText);
             setIframe(JSON.parse(xhr.responseText).url);
             document.getElementById("short-url-wrapper").className = ""
-            document.getElementById("short-url").innerHTML = window.location.href + JSON.parse(xhr.responseText).slug
+            var baseUrl = location.protocol + "//" + location.hostname + (location.port ? ":" + location.port : "")
+            document.getElementById("short-url").innerHTML = baseUrl + JSON.parse(xhr.responseText).slug
             clearForm();
           }
           else {
